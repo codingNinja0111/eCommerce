@@ -4,14 +4,20 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.study</groupId>
 	<artifactId>onlineshoppingbackend</artifactId>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>onlineshoppingbackend Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<javaee.version>8.0</javaee.version>
+		<spring.version>4.3.6.RELEASE</spring.version>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
@@ -32,7 +38,7 @@
 				<version>3.1</version>
 				<configuration>
 					<source>1.8</source>
-					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 		</plugins>

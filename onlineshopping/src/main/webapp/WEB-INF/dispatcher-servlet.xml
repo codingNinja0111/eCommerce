@@ -10,7 +10,12 @@
    http://www.springframework.org/schema/context
    http://www.springframework.org/schema/context/spring-context.xsd">
    
-   <context:component-scan base-package="com.study.controller"/>
+   <context:component-scan base-package="com.study.**"/>
+  
+   
+   <context:component-scan base-package="com.study.onlineshoppingbackend.daoimpl"/>
+   
+  
    <bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		
