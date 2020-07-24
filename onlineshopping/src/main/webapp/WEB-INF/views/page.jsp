@@ -66,6 +66,11 @@
 		<!-- Bootstrap core JavaScript -->
 		<script src="${js}/jquery.js"></script>
 		<script src="${js}/bootstrap.bundle.min.js"></script>
+		<!-- Datatable Plugin -->
+		<script src="${js}/jquery.dataTables.js"></script>
+		<!-- Bootstrap Datatable Plugin -->
+		<script src="${js}/dataTables.bootstrap.js"></script>
+		
 
 		<!-- Self coded javascript -->
 		<script src="${js}/myapp.js"></script>
