@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 		<div class="container">
 			
@@ -16,6 +17,8 @@
 					</li>
 					<li id="contact" class="nav-item"><a class="nav-link" href="${contextRoot}/contact">Contact</a>
 					</li>
+					 <li id="manageProduct" class="nav-item"><a class="nav-link" href="${contextRoot}/manage/product">Manage Product</a>
+	                 </li>	
 				</ul>
 			</div>
 		</div>

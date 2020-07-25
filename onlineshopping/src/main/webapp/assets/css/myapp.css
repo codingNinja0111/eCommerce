@@ -45,3 +45,7 @@ footer {
 .table {
 	width: 100%;
 }
+/* overridden css */
+.help-block {
+	color: #ff0000;
+}
