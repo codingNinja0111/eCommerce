@@ -1,4 +1,4 @@
-<div class="col-lg-3">
+
 
 
 	<p class="my-4">Categories</p>
@@ -9,4 +9,3 @@
 	</c:forEach>
 	</div>
 
-</div>

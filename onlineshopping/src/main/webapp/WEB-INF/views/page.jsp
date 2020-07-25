@@ -22,6 +22,7 @@
 <title>${title}</title>
 <script>
 	window.menu = '${title}';
+	window.contextRoot = '${contextRoot}';
 </script>
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.css" rel="stylesheet">
@@ -60,14 +61,16 @@
 			<!-- /.container -->
 		</div>
 		<!-- Footer -->
-		<div class="footer">
+		
 			<%@include file="./shared/footer.jsp"%>
-		</div>
+		
 		<!-- Bootstrap core JavaScript -->
 		<script src="${js}/jquery.js"></script>
 		<script src="${js}/bootstrap.bundle.min.js"></script>
-		<!-- Datatable Plugin -->
+		
+		<!-- jqueryTable pluggin -->
 		<script src="${js}/jquery.dataTables.js"></script>
+		
 		<!-- Bootstrap Datatable Plugin -->
 		<script src="${js}/dataTables.bootstrap.js"></script>
 		

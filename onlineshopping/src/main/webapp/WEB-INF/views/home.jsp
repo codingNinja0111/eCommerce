@@ -2,9 +2,9 @@
 
 		<div class="row">
 
+			<div class="col-md-3">
 			<%@include file="./shared/sidebar.jsp"%>
-			<!-- /.col-lg-3 -->
-
+		</div>
 			<div class="col-lg-9">
 
 				<div id="carouselExampleIndicators" class="carousel slide my-4"
