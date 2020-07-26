@@ -31,7 +31,15 @@
 	                    </li>					
 				
                 </ul>
-			    
+			    <ul class="nav navbar-nav navbar-right">
+			    	
+	                    <li id="signup">
+	                        <a href="${contextRoot}/membership">Sign Up</a>
+	                    </li>
+						<li id="login">
+	                        <a href="${contextRoot}/login">Login</a>
+	                    </li> 			    	
+			    </ul> 
 		   </div>
             <!-- /.navbar-collapse -->
         </div>

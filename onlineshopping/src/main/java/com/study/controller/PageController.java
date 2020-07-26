@@ -82,5 +82,10 @@ public class PageController {
 		return mv;
 		
 	}
+	@RequestMapping(value="/membership")
+	public ModelAndView register() {
+		ModelAndView mv= new ModelAndView("page");
+	return mv;
+	}
 
 }
