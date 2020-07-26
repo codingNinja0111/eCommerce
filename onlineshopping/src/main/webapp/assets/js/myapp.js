@@ -1,6 +1,23 @@
 $(function() {
 	
-
+	// for adding a loader
+	$(window).load(function(){
+		setTimeout(function() {
+			$(".se-pre-con").fadeOut("slow");
+		}, 500);			
+	});	
+	
+	// for handling CSRF token
+	var token = $('meta[name="_csrf"]').attr('content');
+	var header = $('meta[name="_csrf_header"]').attr('content');
+	
+	if((token!=undefined && header !=undefined) && (token.length > 0 && header.length > 0)) {		
+		// set the token header for the ajax request
+		$(document).ajaxSend(function(e, xhr, options) {			
+			xhr.setRequestHeader(header,token);			
+		});				
+	}
+	
 	
 	
 	// solving the active menu problem
@@ -18,6 +35,9 @@ $(function() {
 	case 'Product Management':
 		$('#manageProduct').addClass('active');
 		break;
+	case 'Shopping Cart':
+		$('#userModel').addClass('active');
+		break;		
 	default:
 		if (menu == "Home")
 			break;
@@ -100,7 +120,7 @@ $(function() {
 											+ '/product" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span></a> &#160;';
 
 									
-									
+									if(userRole !== 'ADMIN') {
 										if (row.quantity < 1) {
 											str += '<a href="javascript:void(0)" class="btn btn-success disabled"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
 										} else {
@@ -111,7 +131,14 @@ $(function() {
 													+ data
 													+ '/product" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
 										}
-									
+									}
+									else {
+										str += '<a href="'
+											+ window.contextRoot
+											+ '/manage/'
+											+ data
+											+ '/product" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>';
+									}
 									
 									return str;
 
@@ -305,6 +332,47 @@ $(function() {
 		
 	}
 	
+	/*validating the loginform*/
+	
+	// validating the product form element	
+	// fetch the form element
+	$loginForm = $('#loginForm');
+	
+	if($loginForm.length) {
+		
+		$loginForm.validate({			
+				rules: {
+					username: {
+						required: true,
+						email: true
+						
+					},
+					password: {
+						required: true
+					}				
+				},
+				messages: {					
+					username: {
+						required: 'Please enter your email!',
+						email: 'Please enter a valid email address!'
+					},
+					password: {
+						required: 'Please enter your password!'
+					}					
+				},
+				errorElement : "em",
+				errorPlacement : function(error, element) {
+					// Add the 'help-block' class to the error element
+					error.addClass("help-block");
+					
+					// add the error label after the input element
+					error.insertAfter(element);
+				}				
+			}
+		
+		);
+		
+	}
 		
 	
 	
@@ -316,5 +384,6 @@ $(function() {
 	    	$alert.fadeOut('slow');
 		   }, 3000
 		);		
-	}		
+	}
+			
 });

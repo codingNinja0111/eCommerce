@@ -3,36 +3,21 @@
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:wf="http://www.springframework.org/schema/webflow-config"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
-   http://www.springframework.org/schema/beans/spring-beans.xsd
-   http://www.springframework.org/schema/mvc
-   http://www.springframework.org/schema/mvc/spring-mvc.xsd    
-   http://www.springframework.org/schema/context
-   http://www.springframework.org/schema/context/spring-context.xsd
-   http://www.springframework.org/schema/webflow-config
-   http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd ">
-
+	xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/webflow-config http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd ">
 	<context:component-scan
-		base-package="com.study.**" />
-
-
+		base-package="com.study" />
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-
 		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
-
 	</bean>
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.support.StandardServletMultipartResolver" />
-
-
 	<!-- Loading static resources -->
 	<mvc:annotation-driven />
-
 	<mvc:resources location="/assets/"
 		mapping="/resources/**" />
-	
+	<!-- Webflow configuration -->
 	<wf:flow-executor id="flowExecutor" />
 	<wf:flow-registry id="flowRegistry"
 		base-path="/WEB-INF/views/flows"
@@ -58,5 +43,4 @@
 	</bean>
 	<bean id="validator"
 		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
-
 </beans>
