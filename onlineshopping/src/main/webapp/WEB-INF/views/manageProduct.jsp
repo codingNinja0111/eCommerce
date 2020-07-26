@@ -177,7 +177,7 @@
 	<div class="row">
 
 
-		<div class='col-md-10'>
+	<div class="col-md-offset-2 col-md-8">
 
 
 			<table id="productsTable"

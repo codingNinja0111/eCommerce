@@ -3,7 +3,9 @@
 	<div class="row">
 		<!-- Would be to display sidebar -->
 		
+			<div class="col-md-3">
 			<%@include file="./shared/sidebar.jsp"%>
+			</div>	
 		
 		<!-- to display the actual products -->
 		<div class="col-md-9">
@@ -30,9 +32,10 @@
 						</ol>
 					</c:if>
 			</div>
-	</div><div class="row">
+	</div>
+	<div class="row">
 			
-				<div class="col-xs-9">
+				<div class="col-md-9">
 
 
 					<table id="productListTable"

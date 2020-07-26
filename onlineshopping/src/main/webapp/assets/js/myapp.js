@@ -3,7 +3,6 @@ $(function() {
 
 	
 	
-	
 	// solving the active menu problem
 	switch (menu) {
 
@@ -19,9 +18,6 @@ $(function() {
 	case 'Product Management':
 		$('#manageProduct').addClass('active');
 		break;
-	case 'Shopping Cart':
-		$('#userModel').addClass('active');
-		break;		
 	default:
 		if (menu == "Home")
 			break;
@@ -35,7 +31,7 @@ $(function() {
 
 	// execute the below code only where we have this table
 	if ($table.length) {
-		 console.log('Inside the table!');
+		// console.log('Inside the table!');
 
 		var jsonUrl = '';
 		if (window.categoryId == '') {
@@ -53,8 +49,7 @@ $(function() {
 					pageLength : 5,
 					ajax : {
 						url : jsonUrl,
-						dataSrc : '',
-						
+						dataSrc : ''
 					},
 					columns : [
 							{
@@ -105,7 +100,7 @@ $(function() {
 											+ '/product" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span></a> &#160;';
 
 									
-								
+									
 										if (row.quantity < 1) {
 											str += '<a href="javascript:void(0)" class="btn btn-success disabled"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
 										} else {
@@ -116,7 +111,6 @@ $(function() {
 													+ data
 													+ '/product" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
 										}
-									
 									
 									
 									return str;
@@ -133,6 +127,7 @@ $(function() {
 	var $productsTable = $('#productsTable');
 	
 	
+	if($productsTable.length) {
 		
 		var jsonUrl = window.contextRoot + '/json/data/admin/all/products';
 		console.log(jsonUrl);
@@ -248,11 +243,29 @@ $(function() {
 							
 					}
 				});
+	}
 	
 	
 	
 	
+	// jQuery Validation Code
 
+	//methods required for validation
+	
+	function errorPlacement(error, element) {
+		// Add the 'help-block' class to the error element
+		error.addClass("help-block");
+		
+		// add the error label after the input element
+		error.insertAfter(element);
+		
+		
+		// add the has-feedback class to the
+		// parent div.validate in order to add icons to inputs
+		element.parents(".validate").addClass("has-feedback");	
+
+	}	
+	
 	
 	
 	// validating the product form element	
@@ -292,6 +305,7 @@ $(function() {
 		
 	}
 	
+		
 	
 	
 	/*------*/
@@ -302,7 +316,5 @@ $(function() {
 	    	$alert.fadeOut('slow');
 		   }, 3000
 		);		
-	}
-
-		
+	}		
 });

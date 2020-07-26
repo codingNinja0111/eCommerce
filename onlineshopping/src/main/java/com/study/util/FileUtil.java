@@ -9,7 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class FileUtil {
 
-	private static final String ABS_PATH = "/home/itsme/projects/spring/eCommerce/onlineshopping/src/main/webapp/assets/images";
+	private static final String ABS_PATH = "/home/itsme/projects/spring/eCommerce/onlineshopping/src/main/webapp/assets/images/";
 	private static String REAL_PATH = null;
 	
 	public static boolean uploadFile(HttpServletRequest request, MultipartFile file, String code) 
