@@ -16,9 +16,15 @@
 	Driver = org.h2.Driver (hit enter if same)
 	user = sa
 	Password = blank
+	
+	once SQl> comes up successfully enter exit
+	Double click on the jar to open h2 console and test the connection with created db 
+	in case running on linux env enter following command from bin directory
+	java -jar h2-1.4.200.jar , h2-cosnole should open in browser
+	
 9)Test connection in h2 console <br/><br/>
 10)Run sql queries mentioned in H2-DatabaseQueries.sql <br/><br/>
 11)	Create a tomcat Server version 8 , add the project into tomcat and just run the server !!!!<br/><br/>
 12)Check http://localhost:8080/onlineshopping/<br/><br/>
 12) For admin user login with (	vk@gmail.com , admin)<br/><br/>
-13) For non-admin user login with (		pradeeprai0111@gmail.com , 123)<br/><br/>
+13) For non-admin user login with (		pradeeprai0111@gmail.com , 123) or just signup using own credentials<br/><br/>
